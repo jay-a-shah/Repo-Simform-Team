@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "48284585739",
+    "project_id": "simform-cafeteria",
+    "storage_bucket": "simform-cafeteria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48284585739:android:289f2f59921a91a143dc0e",
+        "android_client_info": {
+          "package_name": "com.example.simformcafeteria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48284585739-eapolblsu19m4lm2de0hdkp1n4flebjb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM3t33hKIOJtKkDai-GdJ5y_VPliQJgH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48284585739-eapolblsu19m4lm2de0hdkp1n4flebjb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
