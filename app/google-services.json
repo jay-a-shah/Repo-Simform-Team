@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "48284585739-jqf9cm64k8qkard5tv2sf3ibfrb5q4p7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.simformcafeteria",
+            "certificate_hash": "793b27d02758fd95e47e9af67f7eed6799dd93be"
+          }
+        },
+        {
           "client_id": "48284585739-eapolblsu19m4lm2de0hdkp1n4flebjb.apps.googleusercontent.com",
           "client_type": 3
         }
