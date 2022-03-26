@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.simformcafeteria.OTPScreen.OTPActivity
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
@@ -41,9 +42,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         init()
+
         btnSignIn.setOnClickListener {
-            phoneAuthentication()
-        }
+//            phoneAuthentication()
+            val intent = Intent(this, OTPActivity::class.java)
+            startActivity(intent)
+       }
+
        btnSignInMicrosoft.setOnClickListener {
            signInMicrosoftfirst()
             signinToMicrosoft()

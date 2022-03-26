@@ -54,4 +54,14 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.20'
     //Material Library
     implementation "com.google.android.material:material:1.6.0-beta01"
+    //To Add gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.20'
+    //Material Library
+    implementation "com.google.android.material:material:1.6.0-beta01"
+    //Custom Bottom Navigation
+    implementation 'com.github.simformsolutions:SSCustomBottomNavigation:3.2'
+    //OTP PinView
+    implementation 'io.github.chaosleung:pinview:1.4.4'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
+
 }

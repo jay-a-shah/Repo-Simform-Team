@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".OTPScreen.OTPActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewVerification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/wellfleet"
+        android:text="@string/tv_verification"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifUserProfile"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:src="@drawable/user_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewVerification" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewlinkSent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/wellfleet"
+        android:padding="20dp"
+        android:text="@string/tv_enter_the_verification_code_we_just_sent_you_on_your_mobile_number"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gifUserProfile" />
+
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinViewOtp"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:inputType="numberPassword"
+        android:textColor="@color/redSimformColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:hideLineWhenFilled="false"
+        app:itemCount="6"
+        app:itemHeight="48dp"
+        app:itemRadius="5dp"
+        app:itemSpacing="10dp"
+        app:itemWidth="48dp"
+        android:cursorVisible="true"
+        app:cursorWidth="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewlinkSent"
+        app:lineColor="@color/redSimformColor"
+        app:lineWidth="4dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnVerify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_corner"
+        android:paddingStart="35dp"
+        android:paddingEnd="35dp"
+        android:shadowColor="@color/black"
+        android:shadowDx="3.0"
+        android:shadowDy="3.0"
+        android:shadowRadius="4.0"
+        android:text="@string/btn_verify"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pinViewOtp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
