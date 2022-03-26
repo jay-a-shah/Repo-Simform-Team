@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">SimformCafeteria</string>
+    <string name="hint_mobile_no">Mobile No.</string>
+    <string name="hint_eg_7121324754">Eg. 7121324754</string>
+    <string name="tv_welcome_to_simform_cafeteria">Welcome To Simform Cafeteria</string>
+    <string name="tv_doesn_t_have_any_account">Doesn\'t have any account?</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="tv_hello">Hello,</string>
+    <string name="tv_autocomplete_select_your_department">Select Your Department</string>
+    <string name="btn_txt_login_in">Login In</string>
+    <string name="tv_sign_in">Sign in !</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="tv_or">Or</string>
+    <string name="tv_sign_up">Sign Up !</string>
+    <string name="tv_type_of_employee">Type Of Employee :</string>
+    <string name="radiobtn_trainee">Trainee</string>
+    <string name="radiobtn_employee">Employee</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="hint_emp_code">Emp. Code</string>
+    <string name="home">Home</string>
+    <string name="available">Available</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
