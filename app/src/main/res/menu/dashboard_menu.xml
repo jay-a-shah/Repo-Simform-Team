@@ -2,7 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/userHome"
-        android:icon="@drawable/dashboard_home"
+        android:icon="@drawable/icon_home"
+        android:iconTint="@color/white"
         android:title="@string/home" />
     <item
         android:id="@+id/userAvailable"
