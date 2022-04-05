@@ -41,21 +41,15 @@
         android:textSize="35sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgSimformLogo" />
-    
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextMaterialLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/MyEditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
         android:hint="@string/hint_mobile_no"
         android:textColorHint="@color/redSimformColor"
-        app:boxCornerRadiusBottomEnd="5dp"
-        app:boxCornerRadiusBottomStart="5dp"
-        app:boxCornerRadiusTopEnd="5dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:boxStrokeColor="#434242"
-        app:boxStrokeWidth="2dp"
         app:helperText="@string/hint_eg_7121324754"
         app:helperTextTextColor="@color/gray"
         app:hintAnimationEnabled="true"
@@ -71,7 +65,6 @@
             android:layout_height="wrap_content"
             android:drawablePadding="10dp"
             android:inputType="phone"
-            android:maxLength="10"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,7 +99,6 @@
         app:layout_constraintTop_toBottomOf="@id/btnSignIn" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/btnSignInMicrosoft"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
