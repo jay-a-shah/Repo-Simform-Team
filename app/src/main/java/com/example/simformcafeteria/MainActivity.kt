@@ -6,21 +6,17 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.simformcafeteria.OTPScreen.OTPActivity
+import com.example.simformcafeteria.Utils.PHONENUMBER_KEY_INTENT
+import com.example.simformcafeteria.Utils.TEN
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
-import com.google.android.gms.tasks.TaskExecutors
-import com.google.firebase.FirebaseException
-import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.OAuthProvider
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
-import java.util.concurrent.TimeUnit
 import kotlinx.android.synthetic.main.activity_main.btnSignIn
 import kotlinx.android.synthetic.main.activity_main.btnSignInMicrosoft
 import kotlinx.android.synthetic.main.activity_main.editTextMobileForLogin
@@ -30,9 +26,6 @@ class MainActivity : AppCompatActivity() {
 
     var firebaseAuth = FirebaseAuth.getInstance()
     val provider = OAuthProvider.newBuilder("microsoft.com")
-    private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
-    private var storedVerificationId: String? = ""
-    private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
 
     companion object{
         var TAG = "Microsoft"
@@ -40,7 +33,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        init()
         btnSignIn.setOnClickListener {
             phoneAuthentication()
         }
@@ -50,40 +42,26 @@ class MainActivity : AppCompatActivity() {
        }
     }
 
-    private fun init() {
-        callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                startActivity(Intent(applicationContext, MainActivity::class.java))
-                finish()
-            }
-            override fun onVerificationFailed(e: FirebaseException) {
-                Toast.makeText(this@MainActivity,"Verfication Failed",Toast.LENGTH_SHORT).show()
-            }
 
-            override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
-                storedVerificationId = verificationId
-                resendToken = token
-                val intent = Intent(applicationContext,SignUpActivity::class.java)
+
+    private fun phoneAuthentication() {
+        when {
+            TextUtils.isEmpty(editTextMobileForLogin.text.toString()) -> {
+                Toast.makeText(this,getString(R.string.toast_enter_mobile_no),Toast.LENGTH_SHORT).show()
+            }
+            editTextMobileForLogin?.text?.length!! < TEN -> {
+                Toast.makeText(this,getString(R.string.toast_enter_valid_mobile_no),Toast.LENGTH_SHORT).show()
+            }
+            else -> {
+                val intent = Intent(applicationContext, OTPActivity::class.java)
+                intent.putExtra(PHONENUMBER_KEY_INTENT,editTextMobileForLogin.text.toString())
                 startActivity(intent)
                 finish()
             }
         }
     }
 
-    private fun phoneAuthentication() {
-            if(TextUtils.isEmpty(editTextMobileForLogin.text.toString())){
-                Toast.makeText(this,getString(R.string.toast_enter_mobile_no),Toast.LENGTH_SHORT).show()
-            }else if(editTextMobileForLogin?.text?.length!! < 10) {
-                Toast.makeText(this,getString(R.string.toast_enter_valid_mobile_no),Toast.LENGTH_SHORT).show()
-            } else {
-                firebasePhoneAuth()
-            }
-    }
 
-    private fun firebasePhoneAuth() {
-        val options = PhoneAuthOptions.newBuilder(firebaseAuth).setPhoneNumber("+91" + editTextMobileForLogin.text.toString()).setTimeout(60L, TimeUnit.SECONDS).setActivity(this).setCallbacks(callbacks).build()
-        PhoneAuthProvider.verifyPhoneNumber(options)
-    }
 
     private fun signInMicrosoftfirst() {
         firebaseAuth

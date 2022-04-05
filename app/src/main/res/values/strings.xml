@@ -28,4 +28,5 @@
     <string name="btn_verify">Verify</string>
     <string name="toast_enter_mobile_no">Enter Mobile No.</string>
     <string name="toast_enter_valid_mobile_no">Enter Valid Mobile No.</string>
+    <string name="phone_verfication_failed">Verfication Failed</string>
 </resources>
