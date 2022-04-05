@@ -72,9 +72,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun phoneAuthentication() {
             if(TextUtils.isEmpty(editTextMobileForLogin.text.toString())){
-                Toast.makeText(this,getString(R.string.toast_enter_phone),Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,getString(R.string.toast_enter_mobile_no),Toast.LENGTH_SHORT).show()
             }else if(editTextMobileForLogin?.text?.length!! < 10) {
-                Toast.makeText(this,getString(R.string.toast_enter_valid_phone),Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,getString(R.string.toast_enter_valid_mobile_no),Toast.LENGTH_SHORT).show()
             } else {
                 firebasePhoneAuth()
             }
