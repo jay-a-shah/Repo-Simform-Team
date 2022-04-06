@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "48284585739",
+    "firebase_url": "https://simform-cafeteria-default-rtdb.firebaseio.com",
     "project_id": "simform-cafeteria",
     "storage_bucket": "simform-cafeteria.appspot.com"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "48284585739-vlj6oqfa5i5vushml0bmu2scod4hhj3v.apps.googleusercontent.com",
+          "client_id": "48284585739-4r7sjpvpfjr26ij6jsj638apdk98qo7o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.simformcafeteria",
-            "certificate_hash": "afeaecb6287cfd914663376f2531de397cab6853"
+            "certificate_hash": "793b27d02758fd95e47e9af67f7eed6799dd93be"
           }
         },
         {
