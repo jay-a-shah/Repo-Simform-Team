@@ -7,3 +7,7 @@ const val ONE = 1
 const val THREE = 3
 const val TEN = 10
 const val PHONENUMBER_KEY_INTENT = "PhoneNumber"
+const val  STOREDVERFICATIONID_KEY_INTENT= "storedVerificationId"
+const val TAG_MICROSOFT = ""
+const val TIMEOUT_SIXTY = 60L
+const val INDIA_COUNTRY_CODE = "+91"
