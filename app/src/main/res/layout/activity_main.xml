@@ -1,111 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgSimformLogo"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/ic_simform_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewWelcome" />
+        android:paddingBottom="20dp"
+        tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewWelcome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/kavoon"
-        android:text="@string/tv_welcome_to_simform_cafeteria"
-        android:textAlignment="center"
-        android:textColor="@color/redSimformColor"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/kavoon"
-        android:text="@string/tv_sign_in"
-        android:textColor="@color/black"
-        android:textSize="35sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgSimformLogo" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextMaterialLayout"
-        style="@style/MyEditTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:hint="@string/hint_mobile_no"
-        android:textColorHint="@color/redSimformColor"
-        app:helperText="@string/hint_eg_7121324754"
-        app:helperTextTextColor="@color/gray"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        app:hintTextColor="@color/redSimformColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewSignIn">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextMobileForLogin"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgSimformLogo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawablePadding="10dp"
-            android:inputType="phone"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/ic_simform_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewWelcome" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/button_corner"
-        android:paddingStart="35dp"
-        android:paddingEnd="35dp"
-        android:text="@string/btn_sign_in"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextMaterialLayout" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kavoon"
+            android:text="@string/tv_welcome_to_simform_cafeteria"
+            android:textAlignment="center"
+            android:textColor="@color/redSimformColor"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewOr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="@string/tv_or"
-        android:textAlignment="center"
-        android:textColor="@color/gray"
-        android:textSize="25sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSignIn" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/kavoon"
+            android:text="@string/tv_sign_in"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgSimformLogo" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/btnSignInMicrosoft"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/ic_microsoftimage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewOr" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextMaterialLayout"
+            style="@style/MyEditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:hint="@string/hint_mobile_no"
+            app:helperText="@string/hint_eg_7121324754"
+            app:helperTextTextColor="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewSignIn"
+            app:startIconDrawable="@drawable/icon_phone"
+            app:startIconTint="@color/redSimformColor">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextMobileForLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:inputType="phone"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_corner"
+            android:paddingStart="35dp"
+            android:paddingEnd="35dp"
+            android:text="@string/btn_sign_in"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextMaterialLayout" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/tv_or"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSignIn" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnSignInMicrosoft"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_microsoftimage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewOr" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

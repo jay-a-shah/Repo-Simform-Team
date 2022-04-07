@@ -17,13 +17,14 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_spalsh_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@color/redSimformColor"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_corner"
         android:text="@string/btn_txt_login_in"
+        android:fontFamily="@font/wellfleet"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
