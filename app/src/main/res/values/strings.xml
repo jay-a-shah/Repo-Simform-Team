@@ -29,4 +29,8 @@
     <string name="toast_enter_mobile_no">Enter Mobile No.</string>
     <string name="toast_enter_valid_mobile_no">Enter Valid Mobile No.</string>
     <string name="phone_verfication_failed">Verfication Failed</string>
+    <string name="placeholder_mobile_no">Enter Your Mobile No.</string>
+    <string name="placeholder_emp_code">Enter Your Emp. Code</string>
+    <string name="placeholder_email_address">Enter Your Email Address</string>
+    <string name="placeholder_name">Enter Your Name</string>
 </resources>
