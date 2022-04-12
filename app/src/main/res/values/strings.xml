@@ -33,4 +33,18 @@
     <string name="placeholder_emp_code">Enter Your Emp. Code</string>
     <string name="placeholder_email_address">Enter Your Email Address</string>
     <string name="placeholder_name">Enter Your Name</string>
+    <string name="select_your_department_hint_autocompletetextview">Select your Department</string>
+    <string name="firebase_provider_microsoft">microsoft.com</string>
+    <string name="toast_wrong_otp">Wrong OTP</string>
+    <string name="department_name_mobile">Mobile</string>
+    <string name="department_data_not_updated">Data no updated</string>
+    <string name="email_empty">Email is Empty</string>
+    <string name="mobile_empty">MobileNo is Empty</string>
+    <string name="name_empty">Name is Empty</string>
+    <string name="employee_code_empty">Please Enter Employee Code</string>
+    <string name="enter_department">Please Enter Department</string>
+    <string name="user_node">User</string>
+    <string name="successfully_registred">You are Successfully Registred</string>
+    <string name="registration_failed">Sorry Try Again</string>
+    <string name="department_node">Department</string>
 </resources>
