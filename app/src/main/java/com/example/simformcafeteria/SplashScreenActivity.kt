@@ -11,7 +11,7 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
         btn_spalsh_login.setOnClickListener {
-            val intent = Intent(this,DashboardActivity::class.java)
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
     }
