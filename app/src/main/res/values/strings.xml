@@ -51,4 +51,6 @@
     <string name="btn_edit_profile">Edit Profile</string>
     <string name="tv_employee_status">Employee Status:</string>
     <string name="btn_logout">Logout</string>
+    <string name="tv_edit_profile">Edit Profile</string>
+    <string name="btn_submit">Submit</string>
 </resources>

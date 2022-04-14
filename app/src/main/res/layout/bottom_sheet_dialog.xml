@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:padding="20dp"
+            android:src="@drawable/icon_close"
+            android:tint="@color/redSimformColor"
+            app:layout_constraintBaseline_toBaselineOf="@id/textViewDialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/wellfleet"
+            android:text="@string/tv_edit_profile"
+            android:textAlignment="center"
+            android:textColor="@color/redSimformColor"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/btnClose"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextNameMaterialLayout"
+            style="@style/MyEditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:hint="@string/hint_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewDialog"
+            app:placeholderText="@string/placeholder_name"
+            app:startIconDrawable="@drawable/icon_person"
+            app:startIconTint="@color/redSimformColor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextNameDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/wellfleet"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextEmailMaterialLayout"
+            style="@style/MyEditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/hint_email"
+            app:layout_constraintEnd_toEndOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintStart_toStartOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintTop_toBottomOf="@id/editTextNameMaterialLayout"
+            app:placeholderText="@string/placeholder_email_address"
+            app:startIconDrawable="@drawable/ic_email"
+            app:startIconTint="@color/redSimformColor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmailDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/wellfleet"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewEmployeeStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/wellfleet"
+            android:text="@string/tv_employee_status"
+            android:textAlignment="center"
+            android:textColor="@color/redSimformColor"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintStart_toStartOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintTop_toBottomOf="@id/editTextEmailMaterialLayout" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintStart_toStartOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintTop_toBottomOf="@id/textViewEmployeeStatus">
+
+            <RadioButton
+                android:id="@+id/radioButtonTrainee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:buttonTint="@color/redSimformColor"
+                android:fontFamily="@font/wellfleet"
+                android:text="@string/radiobtn_trainee"
+                android:textColor="@color/redSimformColor"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonEmployee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:buttonTint="@color/redSimformColor"
+                android:fontFamily="@font/wellfleet"
+                android:text="@string/radiobtn_employee"
+                android:textColor="@color/redSimformColor"
+                android:textSize="20sp" />
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextEmployeeMaterialLayout"
+            style="@style/MyEditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/hint_emp_code"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintStart_toStartOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup"
+            app:placeholderText="@string/placeholder_emp_code">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmployeeCodeDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/wellfleet"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/button_corner"
+            android:drawableStart="@drawable/icon_logout"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/wellfleet"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/btn_submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintStart_toStartOf="@id/editTextNameMaterialLayout"
+            app:layout_constraintTop_toBottomOf="@id/editTextEmployeeMaterialLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
