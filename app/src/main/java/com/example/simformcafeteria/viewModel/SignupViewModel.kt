@@ -7,6 +7,9 @@ import androidx.lifecycle.MutableLiveData
 import com.example.simformcafeteria.Model.Departments
 import com.example.simformcafeteria.Model.User
 import com.example.simformcafeteria.R
+import com.example.simformcafeteria.Utils.CURRENTUSER_PREFERENCE_KEY
+import com.example.simformcafeteria.Utils.ONE
+import com.example.simformcafeteria.Utils.PreferenceHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -14,25 +17,34 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class SignupViewModel(application: Application): AndroidViewModel(application) {
+class SignupViewModel(application: Application) : AndroidViewModel(application) {
     var email: MutableLiveData<String> = MutableLiveData()
     var name: MutableLiveData<String> = MutableLiveData()
     var mobileNo: MutableLiveData<String> = MutableLiveData()
     var emptypetrainee: MutableLiveData<Boolean> = MutableLiveData()
     var emptypeemp: MutableLiveData<Boolean> = MutableLiveData()
     var empCode: MutableLiveData<String> = MutableLiveData()
-    var departmentList = MutableLiveData<ArrayList<Departments>>()
+    val departmentList = MutableLiveData<ArrayList<Departments>>(arrayListOf())
     var department: MutableLiveData<String> = MutableLiveData()
-    private val logInResult = MutableLiveData<String>()
+    val logInResult = MutableLiveData<String>()
     fun getLogInResult(): LiveData<String> = logInResult
     var database: DatabaseReference = FirebaseDatabase.getInstance().getReference()
+    private val preference = PreferenceHelper()
+
+    private fun setUser(userObject: User) {
+        preference.put(getApplication(), userObject, CURRENTUSER_PREFERENCE_KEY)
+    }
+
+    fun getUser(): User? {
+        return preference.get(getApplication(), CURRENTUSER_PREFERENCE_KEY)
+    }
 
     fun performValidation() {
         if (email.value.isNullOrEmpty()) {
             logInResult.value = getApplication<Application>().resources.getString(R.string.email_empty)
             return
         } else if (mobileNo.value.isNullOrEmpty()) {
-            logInResult.value =getApplication<Application>().resources.getString(R.string.mobile_empty)
+            logInResult.value = getApplication<Application>().resources.getString(R.string.mobile_empty)
             return
         } else if (name.value.isNullOrEmpty()) {
             logInResult.value = getApplication<Application>().resources.getString(R.string.name_empty)
@@ -42,6 +54,7 @@ class SignupViewModel(application: Application): AndroidViewModel(application) {
             return
         } else if (department.value.isNullOrEmpty()) {
             logInResult.value = getApplication<Application>().resources.getString(R.string.enter_department)
+            return
         } else {
             firebaseSignup()
         }
@@ -59,9 +72,11 @@ class SignupViewModel(application: Application): AndroidViewModel(application) {
         }
 
         FirebaseAuth.getInstance().currentUser?.let {
-            database.child(getApplication<Application>().resources.getString(R.string.user_node)).child(it.uid).setValue(user)
+            database.child(getApplication<Application>().resources.getString(R.string.user_node))
+                .child(it.uid).setValue(user)
                 .addOnSuccessListener {
                     logInResult.value = getApplication<Application>().resources.getString(R.string.successfully_registred)
+                    user?.let { userobject -> setUser(userobject) }
                     return@addOnSuccessListener
                 }
                 .addOnFailureListener {
@@ -72,19 +87,15 @@ class SignupViewModel(application: Application): AndroidViewModel(application) {
     }
 
     fun firebaseLoadDepartment() {
-        database.child(getApplication<Application>().resources.getString(R.string.department_node)).addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val tempdepartlistarray = ArrayList<Departments>()
-                for (departmentSnapshot in dataSnapshot.children) {
-                    var dept = Departments(
-                        departmentSnapshot.key?.toInt() ?: 1,
-                        departmentSnapshot.value.toString()
-                    );
-                    tempdepartlistarray.add(dept)
+        database.child(getApplication<Application>().resources.getString(R.string.department_node))
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    for (departmentSnapshot in dataSnapshot.children) {
+                        departmentList.value?.add(Departments(departmentSnapshot.key?.toInt() ?: ONE, departmentSnapshot.value.toString()))
+                    }
                 }
-                departmentList.value = tempdepartlistarray
-            }
-            override fun onCancelled(databaseError: DatabaseError) {}
-        })
+
+                override fun onCancelled(databaseError: DatabaseError) {}
+            })
     }
 }
