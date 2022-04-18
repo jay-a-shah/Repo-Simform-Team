@@ -13,234 +13,237 @@
             name="signup"
             type="com.example.simformcafeteria.viewModel.SignupViewModel" />
     </data>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
-        tools:context=".SignUpActivity">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewHello"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/wellfleet"
-            android:text="@string/tv_hello"
-            android:textColor="@color/redSimformColor"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewSignUp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:fontFamily="@font/kavoon"
-            android:text="@string/tv_sign_up"
-            android:textColor="@color/redSimformColor"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewHello" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editTextNameMaterialLayout"
-            style="@style/MyEditTextStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:hint="@string/hint_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewSignUp"
-            app:placeholderText="@string/placeholder_name">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="10dp"
-                android:fontFamily="@font/wellfleet"
-                android:inputType="textPersonName"
-                android:text="@={signup.name}"
-                android:textSize="20sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editTextEmailMaterialLayout"
-            style="@style/MyEditTextStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:hint="@string/hint_email"
-            app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/redSimformColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextNameMaterialLayout"
-            app:placeholderText="@string/placeholder_email_address">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="10dp"
-                android:fontFamily="@font/wellfleet"
-                android:inputType="textEmailAddress"
-                android:text="@={signup.email}"
-                android:textSize="20sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editTextMobileNoMaterialLayout"
-            style="@style/MyEditTextStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:hint="@string/hint_mobile_no"
-            app:startIconDrawable="@drawable/icon_phone"
-            app:startIconTint="@color/redSimformColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextEmailMaterialLayout"
-            app:placeholderText="@string/placeholder_mobile_no">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextMobileNo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="10dp"
-                android:fontFamily="@font/wellfleet"
-                android:text="@={signup.mobileNo}"
-                android:inputType="phone"
-                android:maxLength="10"
-                android:textSize="20sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dropDownForEmployee"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            app:boxStrokeColor="@color/redSimformColor"
-            app:boxStrokeWidth="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextMobileNoMaterialLayout">
+            android:paddingBottom="20dp"
+            tools:context=".SignUpActivity">
 
-            <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewHello"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/wellfleet"
-                android:inputType="none"
-                android:hint="@string/select_your_department_hint_autocompletetextview"
-                android:text="@={signup.department}"
+                android:text="@string/tv_hello"
                 android:textColor="@color/redSimformColor"
-                android:textSize="20sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewRadioGroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:fontFamily="@font/wellfleet"
-            android:text="@string/tv_type_of_employee"
-            android:textAlignment="center"
-            android:textColor="@color/redSimformColor"
-            android:textSize="19sp"
-            app:layout_constraintEnd_toStartOf="@id/radioGroup"
-            app:layout_constraintStart_toStartOf="@id/dropDownForEmployee"
-            app:layout_constraintTop_toBottomOf="@+id/dropDownForEmployee" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSignUp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/kavoon"
+                android:text="@string/tv_sign_up"
+                android:textColor="@color/redSimformColor"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewHello" />
 
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@id/dropDownForEmployee"
-            app:layout_constraintStart_toEndOf="@id/textViewRadioGroup"
-            app:layout_constraintTop_toBottomOf="@id/dropDownForEmployee">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextNameMaterialLayout"
+                style="@style/MyEditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:hint="@string/hint_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewSignUp"
+                app:placeholderText="@string/placeholder_name">
 
-            <RadioButton
-                android:id="@+id/radioButtonTrainee"
-                android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/wellfleet"
+                    android:inputType="textPersonName"
+                    android:text="@={signup.name}"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextEmailMaterialLayout"
+                style="@style/MyEditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:hint="@string/hint_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextNameMaterialLayout"
+                app:placeholderText="@string/placeholder_email_address"
+                app:startIconDrawable="@drawable/ic_email"
+                app:startIconTint="@color/redSimformColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/wellfleet"
+                    android:inputType="textEmailAddress"
+                    android:text="@={signup.email}"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextMobileNoMaterialLayout"
+                style="@style/MyEditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:hint="@string/hint_mobile_no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextEmailMaterialLayout"
+                app:placeholderText="@string/placeholder_mobile_no"
+                app:startIconDrawable="@drawable/icon_phone"
+                app:startIconTint="@color/redSimformColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextMobileNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/wellfleet"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:text="@={signup.mobileNo}"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dropDownForEmployee"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:boxStrokeColor="@color/redSimformColor"
+                app:boxStrokeWidth="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextMobileNoMaterialLayout">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/wellfleet"
+                    android:hint="@string/select_your_department_hint_autocompletetextview"
+                    android:inputType="none"
+                    android:text="@={signup.department}"
+                    android:textColor="@color/redSimformColor"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewRadioGroup"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:checked="@={signup.emptypetrainee}"
                 android:fontFamily="@font/wellfleet"
-                android:text="@string/radiobtn_trainee"
+                android:text="@string/tv_type_of_employee"
+                android:textAlignment="center"
                 android:textColor="@color/redSimformColor"
-                android:textSize="20sp" />
+                android:textSize="19sp"
+                app:layout_constraintEnd_toStartOf="@id/radioGroup"
+                app:layout_constraintStart_toStartOf="@id/dropDownForEmployee"
+                app:layout_constraintTop_toBottomOf="@+id/dropDownForEmployee" />
 
-            <RadioButton
-                android:id="@+id/radioButtonEmployee"
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="25dp"
-                android:checked="@={signup.emptypeemp}"
-                android:fontFamily="@font/wellfleet"
-                android:text="@string/radiobtn_employee"
-                android:textColor="@color/redSimformColor"
-                android:textSize="20sp" />
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/dropDownForEmployee"
+                app:layout_constraintStart_toEndOf="@id/textViewRadioGroup"
+                app:layout_constraintTop_toBottomOf="@id/dropDownForEmployee">
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radioButtonTrainee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:buttonTint="@color/redSimformColor"
+                    android:checked="@={signup.emptypetrainee}"
+                    android:fontFamily="@font/wellfleet"
+                    android:text="@string/radiobtn_trainee"
+                    android:textColor="@color/redSimformColor"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonEmployee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:buttonTint="@color/redSimformColor"
+                    android:checked="@={signup.emptypeemp}"
+                    android:fontFamily="@font/wellfleet"
+                    android:text="@string/radiobtn_employee"
+                    android:textColor="@color/redSimformColor"
+                    android:textSize="20sp" />
+
+            </RadioGroup>
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/button_corner"
-            android:fontFamily="@font/wellfleet"
-            android:paddingStart="35dp"
-            android:paddingEnd="35dp"
-            android:text="@string/btn_sign_up"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextEmployeeMaterialLayout" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editTextEmployeeMaterialLayout"
-            style="@style/MyEditTextStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:hint="@string/hint_emp_code"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/radioGroup"
-            app:placeholderText="@string/placeholder_emp_code">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextEmployeeCode"
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignUp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawablePadding="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button_corner"
                 android:fontFamily="@font/wellfleet"
-                android:inputType="textPersonName"
-                android:text="@={signup.empCode}"
+                android:paddingStart="35dp"
+                android:paddingEnd="35dp"
+                android:text="@string/btn_sign_up"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextEmployeeMaterialLayout" />
 
-                android:textSize="20sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextEmployeeMaterialLayout"
+                style="@style/MyEditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:hint="@string/hint_emp_code"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radioGroup"
+                app:placeholderText="@string/placeholder_emp_code">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmployeeCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/wellfleet"
+                    android:inputType="textPersonName"
+                    android:text="@={signup.empCode}"
 
-</ScrollView>
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </layout>

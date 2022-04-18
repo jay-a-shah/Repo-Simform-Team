@@ -1,9 +1,11 @@
 package com.example.simformcafeteria.viewModel
 
 import android.app.Application
+import android.content.Intent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.simformcafeteria.DashboardActivity
 import com.example.simformcafeteria.Model.Departments
 import com.example.simformcafeteria.Model.User
 import com.example.simformcafeteria.R
@@ -60,7 +62,7 @@ class SignupViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
-    private fun firebaseSignup() {
+     private fun firebaseSignup() {
         var user: User? = if (emptypeemp.value == true) {
             FirebaseAuth.getInstance().currentUser?.let {
                 User(it.uid, name.value, email.value, mobileNo.value, department.value, true, empCode.value, false)
