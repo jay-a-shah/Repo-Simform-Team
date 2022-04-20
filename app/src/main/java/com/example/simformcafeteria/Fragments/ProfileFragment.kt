@@ -9,6 +9,8 @@ import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.simformcafeteria.R
+import com.example.simformcafeteria.Utils.CURRENTUSER_PREFERENCE_KEY
+import com.example.simformcafeteria.Utils.PreferenceHelper
 import com.example.simformcafeteria.databinding.BottomSheetDialogBinding
 import com.example.simformcafeteria.databinding.FragmentProfileBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -56,5 +58,16 @@ class ProfileFragment : Fragment() {
                 setCancelable(false)
             }
         }
+    }
+    private fun loadDataUserProfile(){
+        val pref = PreferenceHelper()
+        val userDetail = pref.get(requireContext(), CURRENTUSER_PREFERENCE_KEY)
+        binding.apply {
+            editTextName.setText(userDetail?.name)
+            editTextEmail.setText(userDetail?.email)
+            editTextMobileNo.setText(userDetail?.mobileNo)
+            editTextDepartment.setText(userDetail?.department)
+        }
+
     }
 }
