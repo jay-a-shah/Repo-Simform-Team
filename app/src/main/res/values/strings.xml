@@ -18,6 +18,12 @@
     <string name="radiobtn_employee">Employee</string>
     <string name="btn_sign_up">Sign Up</string>
     <string name="hint_emp_code">Emp. Code</string>
+    <string name="toast_enter_phone">Enter phone Number</string>
+    <string name="toast_enter_valid_phone">Enter Valid phone Number</string>
+    <string name="morning_tea_coffee">Morning Tea/Coffee</string>
+    <string name="morning">Morning</string>
+    <string name="tea">Tea</string>
+    <string name="coffee">Coffee</string>
     <string name="home">Home</string>
     <string name="available">Available</string>
     <string name="profile">Profile</string>
@@ -51,6 +57,10 @@
     <string name="btn_edit_profile">Edit Profile</string>
     <string name="tv_employee_status">Employee Status:</string>
     <string name="btn_logout">Logout</string>
+    <string name="review">Review</string>
+    <string name="menu">Menu</string>
     <string name="tv_edit_profile">Edit Profile</string>
     <string name="btn_submit">Submit</string>
+    <string name="evening">Evening</string>
+    <string name="lunch">Lunch</string>
 </resources>
