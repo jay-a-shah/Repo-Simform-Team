@@ -34,6 +34,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        loadDataUserProfile()
         binding.btnEditProfile.setOnClickListener {
             val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.BottomSheetDialogTheme)
             val bottomSheetView = layoutInflater.inflate(R.layout.bottom_sheet_dialog, null)
@@ -63,10 +64,10 @@ class ProfileFragment : Fragment() {
         val pref = PreferenceHelper()
         val userDetail = pref.get(requireContext(), CURRENTUSER_PREFERENCE_KEY)
         binding.apply {
-            editTextName.setText(userDetail?.name)
-            editTextEmail.setText(userDetail?.email)
-            editTextMobileNo.setText(userDetail?.mobileNo)
-            editTextDepartment.setText(userDetail?.department)
+            editTextName.setText(userDetail?.name.toString())
+            editTextEmail.setText(userDetail?.email.toString())
+            editTextMobileNo.setText(userDetail?.mobileNo.toString())
+            editTextDepartment.setText(userDetail?.department.toString())
         }
 
     }

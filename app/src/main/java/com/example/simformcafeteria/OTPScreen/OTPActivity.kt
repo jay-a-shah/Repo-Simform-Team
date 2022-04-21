@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.simformcafeteria.DashboardActivity
 import com.example.simformcafeteria.MainActivity
+import com.example.simformcafeteria.Model.User
 import com.example.simformcafeteria.R
 import com.example.simformcafeteria.SignUpActivity
+import com.example.simformcafeteria.Utils.CURRENTUSER_PREFERENCE_KEY
 import com.example.simformcafeteria.Utils.PHONENUMBER_KEY_INTENT
 import com.example.simformcafeteria.Utils.PreferenceHelper
 import com.example.simformcafeteria.Utils.STOREDVERFICATIONID_KEY_INTENT
@@ -60,6 +62,8 @@ class OTPActivity : AppCompatActivity() {
                 } else {
                     var database = FirebaseDatabase.getInstance().getReference(getString(R.string.user_node)).child(task.result.user?.uid.toString()).get().addOnSuccessListener {
                         if(it.exists()){
+                            val pref = PreferenceHelper()
+                            pref.put(this,it.value, CURRENTUSER_PREFERENCE_KEY)
                             Toast.makeText(this,"User Got",Toast.LENGTH_LONG).show()
                             Log.d("toast","User Got")
                             Intent(this,DashboardActivity::class.java).apply {
