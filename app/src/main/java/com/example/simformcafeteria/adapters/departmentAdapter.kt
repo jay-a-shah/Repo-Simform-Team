@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Filter
 import android.widget.TextView
-import com.example.simformcafeteria.Model.Departments
+import com.example.simformcafeteria.model.Departments
 import com.example.simformcafeteria.R
 import com.example.simformcafeteria.Utils.ZERO
 

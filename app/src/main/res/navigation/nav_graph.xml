@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navHomeFragment"
-        android:name="com.example.simformcafeteria.Fragments.HomeFragment"
+        android:name="com.example.simformcafeteria.fragments.HomeFragment"
         android:label="Home Fragment"
         tools:layout="@layout/fragment_home"/>
 
     <fragment
         android:id="@+id/navAvailableFragment"
-        android:name="com.example.simformcafeteria.Fragments.AvailableFragment"
+        android:name="com.example.simformcafeteria.fragments.AvailableFragment"
         android:label="Available Fragment"
         tools:layout="@layout/fragment_available"/>
 
     <fragment
         android:id="@+id/navProfileFragment"
-        android:name="com.example.simformcafeteria.Fragments.ProfileFragment"
+        android:name="com.example.simformcafeteria.fragments.ProfileFragment"
         android:label="Profile fragment"
         tools:layout="@layout/fragment_profile"/>
 

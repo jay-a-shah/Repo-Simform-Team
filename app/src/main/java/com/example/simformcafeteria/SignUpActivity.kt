@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import com.example.simformcafeteria.Model.Departments
+import com.example.simformcafeteria.model.Departments
 import com.example.simformcafeteria.Utils.ONE
 import com.example.simformcafeteria.adapters.departmentAdapter
 import com.example.simformcafeteria.databinding.ActivitySignUpBinding

@@ -13,3 +13,4 @@ const val TIMEOUT_SIXTY = 60L
 const val INDIA_COUNTRY_CODE = "+91"
 const val PREFERENCES_KEY = "sharedPreference"
 const val CURRENTUSER_PREFERENCE_KEY = "currentuser"
+const val DATEFORMATE = "dd/MM/yyyy"

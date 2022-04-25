@@ -1,124 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="10dp"
-    android:layout_marginTop="50dp"
-    android:layout_marginEnd="10dp"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp"
-    app:cardUseCompatPadding="true">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <variable
+            name="itemViewModel"
+            type="com.example.simformcafeteria.model.ItemDataClass" />
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="5dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/morningTextTea"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/morning"
-            android:textColor="@color/simformTextColor"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/menuItems"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
-            android:gravity="center"
-            android:text="@string/menu"
-            android:textColor="@color/simformTextColor"
-            android:textSize="15sp"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/morningTextTea" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/morningTextTea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@{itemViewModel.title}"
+                android:textColor="@color/simformTextColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggleGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:visibility="gone"
-            app:checkedButton="@id/btnTea"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/morningTextTea"
-            app:singleSelection="true">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/menuItems"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:gravity="center"
+                android:text="@string/menu"
+                android:textColor="@color/simformTextColor"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/morningTextTea" />
 
-            <Button
-                android:id="@+id/btnTea"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tea" />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:visibility="visible"
+                app:checkedButton="@id/btnTea"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/morningTextTea"
+                app:singleSelection="true">
 
-            <Button
-                android:id="@+id/btnCoffee"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/btnTea"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tea" />
+
+                <Button
+                    android:id="@+id/btnCoffee"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/coffee" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnLike"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/backgroundColor"
+                android:src="@drawable/ic_like"
+                android:tint="@color/simformTextColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toggleGroup" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnDesLike"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@color/backgroundColor"
+                android:src="@drawable/ic_dislike"
+                android:tint="@color/simformTextColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/btnLike"
+                app:layout_constraintTop_toTopOf="@+id/btnLike" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/review"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/coffee" />
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/review"
+                android:textColor="@color/simformTextColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/btnDesLike"
+                app:layout_constraintTop_toTopOf="@+id/btnDesLike" />
 
-        </com.google.android.material.button.MaterialButtonToggleGroup>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dailyDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="170dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="5dp"
+                android:text="@{itemViewModel.timeText}"
+                android:textColor="@color/simformTextColor"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/morningTextTea"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/btnLike"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/backgroundColor"
-            android:src="@drawable/ic_like"
-            android:tint="@color/simformTextColor"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toggleGroup" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/btnDesLike"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:background="@color/backgroundColor"
-            android:src="@drawable/ic_dislike"
-            android:tint="@color/simformTextColor"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/btnLike"
-            app:layout_constraintTop_toTopOf="@+id/btnLike" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/review"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:text="@string/review"
-            android:textColor="@color/simformTextColor"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/btnDesLike"
-            app:layout_constraintTop_toTopOf="@+id/btnDesLike" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/dailyDate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="5dp"
-            android:textColor="@color/simformTextColor"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/morningTextTea"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</layout>

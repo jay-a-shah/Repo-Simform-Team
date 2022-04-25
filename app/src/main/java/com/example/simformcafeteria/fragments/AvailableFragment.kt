@@ -1,4 +1,4 @@
-package com.example.simformcafeteria.Fragments
+package com.example.simformcafeteria.fragments
 
 import androidx.fragment.app.Fragment
 import com.example.simformcafeteria.R
