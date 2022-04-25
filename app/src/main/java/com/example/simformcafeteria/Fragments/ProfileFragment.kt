@@ -68,6 +68,12 @@ class ProfileFragment : Fragment() {
             editTextEmail.setText(userDetail?.email.toString())
             editTextMobileNo.setText(userDetail?.mobileNo.toString())
             editTextDepartment.setText(userDetail?.department.toString())
+            if (userDetail?.employeeType == true){
+                radioButtonEmployee.isChecked = true
+                editTextEmployeeMaterialLayout.visibility = View.VISIBLE
+            }else {
+                radioButtonTrainee.isChecked = true
+            }
         }
 
     }

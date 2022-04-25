@@ -145,7 +145,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/wellfleet"
                     android:hint="@string/select_your_department_hint_autocompletetextview"
-                    android:inputType="none"
+                    android:inputType="text"
                     android:text="@={signup.department}"
                     android:textColor="@color/redSimformColor"
                     android:textSize="20sp" />
