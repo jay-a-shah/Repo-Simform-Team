@@ -1,4 +1,4 @@
-package com.example.simformcafeteria.Model
+package com.example.simformcafeteria.model
 
 class User(
     val uid: String,

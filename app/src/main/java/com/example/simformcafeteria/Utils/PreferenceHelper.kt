@@ -3,7 +3,7 @@ package com.example.simformcafeteria.Utils
 import android.content.Context
 
 import android.content.SharedPreferences
-import com.example.simformcafeteria.Model.User
+import com.example.simformcafeteria.model.User
 import com.google.gson.GsonBuilder
 
 class PreferenceHelper {

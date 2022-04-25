@@ -1,13 +1,11 @@
 package com.example.simformcafeteria
 
 import android.os.Bundle
-import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.example.simformcafeteria.Fragments.AvailableFragment
-import com.example.simformcafeteria.Fragments.HomeFragment
-import com.example.simformcafeteria.Fragments.ProfileFragment
+import com.example.simformcafeteria.fragments.AvailableFragment
+import com.example.simformcafeteria.fragments.HomeFragment
+import com.example.simformcafeteria.fragments.ProfileFragment
 import kotlinx.android.synthetic.main.activity_dashboard.bottomNavigation
 
 class DashboardActivity : AppCompatActivity() {

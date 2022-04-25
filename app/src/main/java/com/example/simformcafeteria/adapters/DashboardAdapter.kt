@@ -1,8 +1,8 @@
-package com.example.simformcafeteria.Adapter
+package com.example.simformcafeteria.adapters
 
-import com.example.simformcafeteria.Fragments.AvailableFragment
-import com.example.simformcafeteria.Fragments.HomeFragment
-import com.example.simformcafeteria.Fragments.ProfileFragment
+import com.example.simformcafeteria.fragments.AvailableFragment
+import com.example.simformcafeteria.fragments.HomeFragment
+import com.example.simformcafeteria.fragments.ProfileFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle

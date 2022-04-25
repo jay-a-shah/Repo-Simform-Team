@@ -1,13 +1,11 @@
 package com.example.simformcafeteria.viewModel
 
 import android.app.Application
-import android.content.Intent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.simformcafeteria.DashboardActivity
-import com.example.simformcafeteria.Model.Departments
-import com.example.simformcafeteria.Model.User
+import com.example.simformcafeteria.model.Departments
+import com.example.simformcafeteria.model.User
 import com.example.simformcafeteria.R
 import com.example.simformcafeteria.Utils.CURRENTUSER_PREFERENCE_KEY
 import com.example.simformcafeteria.Utils.ONE
