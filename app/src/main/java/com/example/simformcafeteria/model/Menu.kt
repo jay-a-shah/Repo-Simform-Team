@@ -1,4 +1,25 @@
-package com.example.simformcafeteria.model
+package com.example.simformcafeteria.Model
 
-class Menu(val title: String,val like:Int,val dislike: Int) {
-}
+data class Menu(
+    val Date: Date
+)
+
+data class Date(
+    val Evening: Evening,
+    // val Lunch: Lunch,
+    // val Morning: Morning
+)
+
+data class Evening (
+    val menuItem: List<MenuItem>
+)
+
+data class Lunch(
+    val DisLike: Int,
+    val Like: Int
+)
+
+data class MenuItem(
+    val DisLike: Int,
+    val Like: Int
+)
