@@ -36,4 +36,5 @@ class HomeFragment : Fragment() {
         return view
     }
     // Login Screen Change
+    //Sign Up Screen Added
 }
