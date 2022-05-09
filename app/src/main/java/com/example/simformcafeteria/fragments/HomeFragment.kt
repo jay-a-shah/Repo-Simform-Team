@@ -35,4 +35,5 @@ class HomeFragment : Fragment() {
         binding.recyclerHome.adapter = ItemAdapter(list, requireContext())
         return view
     }
+    // Login Screen Change
 }
